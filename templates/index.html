@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+    <div class="jumbotron panel">
+        <h1>New Born Screening Portal</h1>
+        <h5>Enhancing the applicability and performance of Newborn Screening through Next Generation DNA Sequencing.</h5>
+        {% if not current_user.is_authenticated() %}
+        Please <a href="{{ url_for('register') }}">Register</a> or <a href="{{ url_for('login') }}">Login</a>.
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h5>Individuals</h5></div>
+                <div class="panel-body"><center><h1>{{ individual_count }}</h1></center></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+             <div class="panel panel-default">
+                <div class="panel-heading"><h5>Samples</h5></div>
+                <div class="panel-body"><center><h1>{{ sample_count }}</h1></center></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+             <div class="panel panel-default">
+                <div class="panel-heading"><h5>Variants</h5></div>
+                <div class="panel-body"><center><h1></h1></center></div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="jumbotron">-->
+        <!--<h3>Background</h3>-->
+        <!--In England, newborns are screened for nine rare but serious health conditions using dried blood spots:-->
+        <!--<ul>-->
+            <!--<li>Sickle Cell Disease (SCD)</li>-->
+            <!--<li>Cystic Fibrosis (CF)</li>-->
+            <!--<li>Congenital Hypothyroidism (CHT)</li>-->
+            <!--<li>Plus 6 inherited metabolic diseases:</li>-->
+                <!--<ul>-->
+                    <!--<li>Phenylketonuria (PKU)</li>-->
+                    <!--<li>Medium-Chain Acyl-CoA Dehydrogenase Deficiency (MCADD)</li>-->
+                    <!--<li>Maple Syrup Urine Disease (MSUD)</li>-->
+                    <!--<li>Isovaleric Acidaemia (IVA)</li>-->
+                    <!--<li>Glutaric Aciduria Type 1 (GA1)</li>-->
+                    <!--<li>Homocystinuria (pyridoxine unresponsive ; HCU)</li>-->
+                <!--</ul>-->
+        <!--</ul>-->
+    <!--</div>-->
+{% endblock %}
